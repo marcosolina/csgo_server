@@ -1,8 +1,12 @@
 # CS:GO Server
 
-How to create a CS:GO Server
+How to create a CS:GO Server on Ubuntu 18 x64
 
 ~~~~
+ 
+ $ sudo add-apt-repository multiverse
+ $ sudo dpkg --add-architecture i386
+ $ sudo apt update
  $ sudo apt install lib32gcc1 steamcmd 
  $ mkdir /home/marco/shared/csgo-ds
  
