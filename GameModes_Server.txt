@@ -1,0 +1,61 @@
+// This goes in csgo/*
+// To use this file, rename it to GameModes_Server.txt
+//
+// Values here override the default gamemodes.txt 
+
+"GameModes_Server.txt" {
+    "gameTypes" {
+        "classic" {
+            "gameModes"{
+                /////////////////////////////////////////
+                // COMPETITIVE
+                /////////////////////////////////////////
+                "competitive"{
+
+                        
+                        "maxplayers"		"12"			// Note that maxplayers doesn't go in the convar block.
+
+                        "mapgroupsMP"						// List of mapgroups valid for this game mode ( competitive )
+                        {
+                            "mg_marco"		""
+                        }
+
+
+                }
+            }
+        }
+        
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        // Map groups
+        //
+        // To use a mapgroup, it needs to be defined in a keyvalues
+        // block such as the example below, as well as listed in the 
+        // 'mapgroupsMP' block within the game mode that will run it,
+        // such as the example above.
+        //
+        // Then launch the server with '+mapgroup MAPGROUPNAME'
+        //
+        // Example:
+        //
+        // srcds -game csgo +game_mode 1 +mapgroup mg_bomb_se +map de_nuke_se
+        //
+        //
+        // Check the developer wiki for updated community info
+        // https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        "mapgroups"{
+            "mg_marco"									// mapgroup definition
+            {
+                "name"			"mg_marco"
+                "maps"
+                {
+                    "cs_italy"		""
+                    "cs_office"		""
+                }
+            }
+        }
+    }
+}
