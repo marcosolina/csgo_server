@@ -7,7 +7,7 @@ How to create a CS:GO Server on Ubuntu 18 x64
  $ sudo dpkg --add-architecture i386
  $ sudo apt update
  $ sudo apt install lib32gcc1 steamcmd 
- $ mkdir /home/marco/shared/csgo-ds
+ $ mkdir /path/to/csgoInstalDir
 ~~~~
 
 ## Connect to rcon
