@@ -10,101 +10,20 @@
 				// COMPETITIVE
 				/////////////////////////////////////////
 				"competitive"{
-					"maxplayers"		"11"			// Note that maxplayers doesn't go in the convar block.
+					"maxplayers"		"16"			// Note that maxplayers doesn't go in the convar block.
 														// Another way to set maxplayers is to add -maxplayers_override XX to the cmd line.
-					"exec"
-					{
-														// Any config files listed here will be executed after the ones in gamemodes.txt.
-						"exec"					"server_last.cfg" 
-					}
+
 					"mapgroupsMP"						// List of mapgroups valid for this game mode ( competitive )
 					{
-						"mg_active"		""
-					}
-				}
-				/////////////////////////////////////////
-				// CASUAL
-				/////////////////////////////////////////
-				"casual"{
-					"maxplayers"		"30"
-					"exec"
-					{
-						"exec"					"server_last.cfg"
-					}
-					"mapgroupsMP"						// List of mapgroups valid for this game mode ( casual )
-					{
-						"mg_active"		""
+						"mg_ixi_workshop"			""
+						"mg_ixi_short"				""
+						"mg_ixi_classic"			""
 					}
 				}
 			}
 		}
-		"gungame"{
-			"gameModes"{
-
-				/////////////////////////////////////////
-				// ARMS RACE
-				/////////////////////////////////////////
-				"gungameprogressive"{
-					"maxplayers"			"10"
-					// These are the configs that get executed when a game mode of this type is created
-					"exec"
-					{
-						"exec"					"server_last.cfg"
-					}								
-					"mapgroupsMP"
-					{
-						"mg_armsrace"	""
-					}
-					"weaponprogression_ct"
-					{
-						"deagle"		{ "kills"	"5" }
-						"awp"			{ "kills"	"5" }
-						"knifegg"		{ "kills"	"1" }
-					}
-					"weaponprogression_t"
-					{
-						"deagle"		{ "kills"	"5" }
-						"awp"			{ "kills"	"5" }
-						"knifegg"		{ "kills"	"1" }
-					}
-					/////////////////////////////////////////
-					// DEMOLITION
-					/////////////////////////////////////////
-					"gungametrbomb"{
-						"maxplayers"			"10"
-
-						// These are the configs that get executed when a game mode of this type is created
-						"exec"
-						{
-							"exec"					"server_last.cfg"
-						}
-
-						"mapgroupsMP"
-						{
-							"mg_demolition"		""
-						}
-
-						"weaponprogression_ct"
-						{
-							"m4a1"			{ "kills"	"1" }
-							"awp"			{ "kills"	"1" }
-							"Scar20"		{ "kills"	"1" }
-						}
-							
-						"weaponprogression_t"
-						{
-							"ak47"			{ "kills"	"1" }
-							"awp"			{ "kills"	"1" }
-							"g3sg1"			{ "kills"	"1" }
-						}
-
-
-					}
-				}
-			}
-		}
-
-//////////////////////////////////////////////////////////////////////////////////////////////
+	}
+	//////////////////////////////////////////////////////////////////////////////////////////////
 // Map groups
 //
 // To use a mapgroup, it needs to be defined in a keyvalues
@@ -124,20 +43,81 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
-		"mapgroups"
+	"mapgroups"
+	{
+		"mg_ixi_workshop"									// mapgroup definition
 		{
-			"mg_active"									// mapgroup definition
+			"name"			"mg_ixi_workshop"
+			"maps"
 			{
-				"name"			"mg_active"
-				"maps"
-				{
-					"de_dust_se"		""
-					"de_dust2_se"		""
-					"de_nuke_se"		""
-					"de_train_se"		""
-					"de_inferno_se"		""
-					"de_aztec_se"		""
-				}
+				"workshop\600728667\de_aqueduct"				""
+				"workshop\320674385\de_arcade_v2"				""
+				"workshop\1578840709\de_aurelia"				""
+				"workshop\1258599704\de_breach"					""
+				"workshop\215971897\de_coldwater"				""
+				"workshop\239672577\de_crown"					""
+				"workshop\1387732091\de_dst"					""
+				"workshop\401145257\de_fire"					""
+				"workshop\862889198\de_westwood2"				""
+				"workshop\1978052734\de_mutiny"					""
+				"workshop\127012360\cs_museum"					""
+				"workshop\546623875\de_santorini"				""
+				"workshop\1587622126\de_pyramid"				""
+				"workshop\389175812\de_zoo"						""
+				"workshop\1561348377\de_aztec"					""
+				"workshop\1318698056\de_subzero"				""
+				"workshop\273415773\cs_hijack"					""
+				"workshop\125786610\cs_backalley"				""
+				"workshop\165683043\as_oilrig_b1"				""
+				"workshop\135827566\cs_estate"					""
+				"workshop\600914785\cs_cruise"					""
+				"workshop\1958745897\de_marine"					""
+				"workshop\2175304484\de_engage"					""
+				"workshop\2105680462\de_firenze"				""
+				"workshop\1855652898\de_zenith"					""
+				"workshop\2011784264\de_blossom"				""
+				"workshop\2064064363\de_miracle"				""
+				"workshop\272117783\de_island"					""
+				"workshop\221603249\de_marquis"					""
+				"workshop\1414531578\de_cornerwork"				""
+				"workshop\1302060184\de_beerhouse"				""
+				"workshop\874801875\de_Codewise2"				""
+				"workshop\529733812\de_blast_beta02"			""
+				"workshop\599577239\de_garrison"				""
+				"workshop\2230541612\de_oyster"					""
+				"workshop\2311360577\de_mirage_cyberpunk"		""
+			}
+		}
+		
+		"mg_ixi_short"									// mapgroup definition
+		{
+			"name"			"mg_ixi_short"
+			"maps"
+			{
+				"de_shortnuke"		""
+				"de_shortdust"		""
+				"de_shorttrain"		""
+			}
+		}
+		
+		"mg_ixi_classic"									// mapgroup definition
+		{
+			"name"			"mg_ixi_classic"
+			"maps"
+			{
+				"cs_italy"			""
+				"cs_assault"		""
+				"cs_militia"		""
+				"cs_office"			""
+				"de_nuke"			""
+				"de_train"			""
+				"de_cbble"			""
+				"de_dust2"			""
+				"de_inferno"		""
+				"de_lake"			""
+				"de_mirage"			""
+				"de_overpass"		""
+				"de_vertigo"		""
 			}
 		}
 	}
