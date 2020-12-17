@@ -69,11 +69,20 @@ $ rcon command_to_execute
     * workshop/599577239/de_garrison
     * workshop/2230541612/de_oyster
     * workshop/2311360577/de_mirage_cyberpunk
+    * workshop/570181108/de_inferno_winter
+    * workshop/129042069/cs_bank
+    * workshop/523638720/fy_simpsons
+    * workshop/1820772401/as_tundra
 
 * mg_ixi_short
     * de_shortnuke
     * de_shortdust
     * de_shorttrain
+    * workshop\129042069\cs_bank
+    * de_lake
+    * de_safehouse
+    * de_stmarc
+    * workshop\523638720\fy_simpsons
 
 * mg_ixi_classic
     * cs_italy
@@ -132,4 +141,8 @@ rcon map workshop/529733812/de_blast_beta02
 rcon map workshop/599577239/de_garrison
 rcon map workshop/2230541612/de_oyster
 rcon map workshop/2311360577/de_mirage_cyberpunk
+rcon map workshop/570181108/de_inferno_winter
+rcon map workshop/129042069/cs_bank
+rcon map workshop/523638720/fy_simpsons
+rcon map workshop/1820772401/as_tundra
 ~~~~

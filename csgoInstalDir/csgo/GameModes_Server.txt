@@ -86,6 +86,9 @@
 				"workshop\599577239\de_garrison"				""
 				"workshop\2230541612\de_oyster"					""
 				"workshop\2311360577\de_mirage_cyberpunk"		""
+				"workshop\570181108\de_inferno_winter"			""
+				"workshop\129042069\cs_bank"					""
+				"workshop\1820772401\as_tundra"					""
 			}
 		}
 		
@@ -94,9 +97,14 @@
 			"name"			"mg_ixi_short"
 			"maps"
 			{
-				"de_shortnuke"		""
-				"de_shortdust"		""
-				"de_shorttrain"		""
+				"de_shortnuke"									""
+				"de_shortdust"									""
+				"de_shorttrain"									""
+				"workshop\129042069\cs_bank"					""
+				"de_lake"										""
+				"de_safehouse"									""
+				"de_stmarc"										""
+				"workshop\523638720\fy_simpsons"				""
 			}
 		}
 		
