@@ -58,6 +58,7 @@
 				"workshop\135827566\cs_estate"					""
 				"workshop\273415773\cs_hijack"					""
 				"workshop\127012360\cs_museum"					""
+				"workshop\206678373\cs_valley"					""
 				"workshop\600728667\de_aqueduct"				""
 				"workshop\320674385\de_arcade_v2"				""
 				"workshop\1578840709\de_aurelia"				""

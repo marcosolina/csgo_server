@@ -43,6 +43,7 @@ $ rcon command_to_execute
     * [cs_estate](https://steamcommunity.com/sharedfiles/filedetails/?id=135827566)
     * [cs_hijack](https://steamcommunity.com/sharedfiles/filedetails/?id=273415773)
     * [cs_museum](https://steamcommunity.com/sharedfiles/filedetails/?id=127012360)
+    * [cs_valley](https://steamcommunity.com/sharedfiles/filedetails/?id=206678373)
     * [de_aqueduct](https://steamcommunity.com/sharedfiles/filedetails/?id=600728667)
     * [de_arcade_v2](https://steamcommunity.com/sharedfiles/filedetails/?id=320674385)
     * [de_aurelia](https://steamcommunity.com/sharedfiles/filedetails/?id=1578840709)
@@ -114,6 +115,7 @@ rcon map workshop/600914785/cs_cruise
 rcon map workshop/135827566/cs_estate
 rcon map workshop/273415773/cs_hijack
 rcon map workshop/127012360/cs_museum
+rcon map workshop/206678373/cs_valley
 rcon map workshop/600728667/de_aqueduct
 rcon map workshop/320674385/de_arcade_v2
 rcon map workshop/1578840709/de_aurelia
