@@ -10,17 +10,14 @@
 				// COMPETITIVE
 				/////////////////////////////////////////
 				"competitive"{
-					"maxplayers"		"11"			// Note that maxplayers doesn't go in the convar block.
+					"maxplayers"		"16"			// Note that maxplayers doesn't go in the convar block.
 														// Another way to set maxplayers is to add -maxplayers_override XX to the cmd line.
-					"exec"
-					{
-														// Any config files listed here will be executed after the ones in gamemodes.txt.
-						"exec"					"server_last.cfg" 
-					}
+
 					"mapgroupsMP"						// List of mapgroups valid for this game mode ( competitive )
 					{
-						"mg_marco"			""
-						"mg_marco_mini"		""
+						"mg_ixi_workshop"			""
+						"mg_ixi_short"				""
+						"mg_ixi_classic"			""
 					}
 				}
 			}
@@ -48,17 +45,73 @@
 
 	"mapgroups"
 	{
-		"mg_marco"									// mapgroup definition
+		"mg_ixi_workshop"									// mapgroup definition
 		{
-			"name"			"mg_marco"
+			"name"			"mg_ixi_workshop"
 			"maps"
 			{
-				//"as_tundra"			""
-				//"as_oilrig"			""
-				"cs_747"			""
-				"cs_hijack"			""
-				"cs_house"			""
-				"cs_valley_v4"		""
+				"workshop\165683043\as_oilrig_b1"				""
+				"workshop\1820772401\as_tundra"					""
+				"workshop\125786610\cs_backalley"				""
+				"workshop\129042069\cs_bank"					""
+				"workshop\600914785\cs_cruise"					""
+				"workshop\135827566\cs_estate"					""
+				"workshop\273415773\cs_hijack"					""
+				"workshop\127012360\cs_museum"					""
+				"workshop\206678373\cs_valley"					""
+				"workshop\600728667\de_aqueduct"				""
+				"workshop\320674385\de_arcade_v2"				""
+				"workshop\1561348377\de_aztec"					""
+				"workshop\1302060184\de_beerhouse"				""
+				"workshop\529733812\de_blast_beta02"			""
+				"workshop\2011784264\de_blossom"				""
+				"workshop\1258599704\de_breach"					""
+				"workshop\874801875\de_Codewise2"				""
+				"workshop\215971897\de_coldwater"				""
+				"workshop\1414531578\de_cornerwork"				""
+				"workshop\239672577\de_crown"					""
+				"workshop\1387732091\de_dst"					""
+				"workshop\2175304484\de_engage"					""
+				"workshop\401145257\de_fire"					""
+				"workshop\2105680462\de_firenze"				""
+				"workshop\599577239\de_garrison"				""
+				"workshop\570181108\de_inferno_winter"			""
+				"workshop\1958745897\de_marine"					""
+				"workshop\221603249\de_marquis"					""
+				"workshop\2064064363\de_miracle"				""
+				"workshop\2311360577\de_mirage_cyberpunk"		""
+				"workshop\1978052734\de_mutiny"					""
+				"workshop\1587622126\de_pyramid"				""
+				"workshop\546623875\de_santorini"				""
+				"workshop\1318698056\de_subzero"				""
+				"workshop\862889198\de_westwood2"				""
+				"workshop\1855652898\de_zenith"					""
+				"workshop\389175812\de_zoo"						""
+				"workshop\523638720\fy_simpsons"				""
+			}
+		}
+		
+		"mg_ixi_short"									// mapgroup definition
+		{
+			"name"			"mg_ixi_short"
+			"maps"
+			{
+				"de_shortnuke"									""
+				"de_shortdust"									""
+				"de_shorttrain"									""
+				"workshop\129042069\cs_bank"					""
+				"de_lake"										""
+				"de_safehouse"									""
+				"de_stmarc"										""
+				"workshop\523638720\fy_simpsons"				""
+			}
+		}
+		
+		"mg_ixi_classic"									// mapgroup definition
+		{
+			"name"			"mg_ixi_classic"
+			"maps"
+			{
 				"cs_italy"			""
 				"cs_assault"		""
 				"cs_militia"		""
@@ -72,18 +125,6 @@
 				"de_mirage"			""
 				"de_overpass"		""
 				"de_vertigo"		""
-			}
-		}
-		
-		"mg_marco_mini"									// mapgroup definition
-		{
-			"name"			"mg_marco_mini"
-			"maps"
-			{
-				
-				"de_inferno"		""
-				"de_lake"			""
-				"de_mirage"			""
 			}
 		}
 	}
