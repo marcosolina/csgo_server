@@ -46,7 +46,6 @@ $ rcon command_to_execute
     * [cs_valley](https://steamcommunity.com/sharedfiles/filedetails/?id=206678373)
     * [de_aqueduct](https://steamcommunity.com/sharedfiles/filedetails/?id=600728667)
     * [de_arcade_v2](https://steamcommunity.com/sharedfiles/filedetails/?id=320674385)
-    * [de_aurelia](https://steamcommunity.com/sharedfiles/filedetails/?id=1578840709)
     * [de_aztec](https://steamcommunity.com/sharedfiles/filedetails/?id=1561348377)
     * [de_beerhouse](https://steamcommunity.com/sharedfiles/filedetails/?id=1302060184)
     * [de_blast_beta02](https://steamcommunity.com/sharedfiles/filedetails/?id=529733812)
@@ -62,13 +61,11 @@ $ rcon command_to_execute
     * [de_firenze](https://steamcommunity.com/sharedfiles/filedetails/?id=2105680462)
     * [de_garrison](https://steamcommunity.com/sharedfiles/filedetails/?id=599577239)
     * [de_inferno_winter](https://steamcommunity.com/sharedfiles/filedetails/?id=570181108)
-    * [de_island](https://steamcommunity.com/sharedfiles/filedetails/?id=272117783)
     * [de_marine](https://steamcommunity.com/sharedfiles/filedetails/?id=1958745897)
     * [de_marquis](https://steamcommunity.com/sharedfiles/filedetails/?id=221603249)
     * [de_miracle](https://steamcommunity.com/sharedfiles/filedetails/?id=2064064363)
     * [de_mirage_cyberpunk](https://steamcommunity.com/sharedfiles/filedetails/?id=2311360577)
     * [de_mutiny](https://steamcommunity.com/sharedfiles/filedetails/?id=1978052734)
-    * [de_oyster](https://steamcommunity.com/sharedfiles/filedetails/?id=2230541612)
     * [de_pyramid](https://steamcommunity.com/sharedfiles/filedetails/?id=1587622126)
     * [de_santorini](https://steamcommunity.com/sharedfiles/filedetails/?id=546623875)
     * [de_subzero](https://steamcommunity.com/sharedfiles/filedetails/?id=1318698056)
@@ -118,7 +115,6 @@ rcon map workshop/127012360/cs_museum
 rcon map workshop/206678373/cs_valley
 rcon map workshop/600728667/de_aqueduct
 rcon map workshop/320674385/de_arcade_v2
-rcon map workshop/1578840709/de_aurelia
 rcon map workshop/1561348377/de_aztec
 rcon map workshop/1302060184/de_beerhouse
 rcon map workshop/529733812/de_blast_beta02
@@ -134,13 +130,11 @@ rcon map workshop/401145257/de_fire
 rcon map workshop/2105680462/de_firenze
 rcon map workshop/599577239/de_garrison
 rcon map workshop/570181108/de_inferno_winter
-rcon map workshop/272117783/de_island
 rcon map workshop/1958745897/de_marine
 rcon map workshop/221603249/de_marquis
 rcon map workshop/2064064363/de_miracle
 rcon map workshop/2311360577/de_mirage_cyberpunk
 rcon map workshop/1978052734/de_mutiny
-rcon map workshop/2230541612/de_oyster
 rcon map workshop/1587622126/de_pyramid
 rcon map workshop/546623875/de_santorini
 rcon map workshop/1318698056/de_subzero

@@ -61,7 +61,6 @@
 				"workshop\206678373\cs_valley"					""
 				"workshop\600728667\de_aqueduct"				""
 				"workshop\320674385\de_arcade_v2"				""
-				"workshop\1578840709\de_aurelia"				""
 				"workshop\1561348377\de_aztec"					""
 				"workshop\1302060184\de_beerhouse"				""
 				"workshop\529733812\de_blast_beta02"			""
@@ -77,13 +76,11 @@
 				"workshop\2105680462\de_firenze"				""
 				"workshop\599577239\de_garrison"				""
 				"workshop\570181108\de_inferno_winter"			""
-				"workshop\272117783\de_island"					""
 				"workshop\1958745897\de_marine"					""
 				"workshop\221603249\de_marquis"					""
 				"workshop\2064064363\de_miracle"				""
 				"workshop\2311360577\de_mirage_cyberpunk"		""
 				"workshop\1978052734\de_mutiny"					""
-				"workshop\2230541612\de_oyster"					""
 				"workshop\1587622126\de_pyramid"				""
 				"workshop\546623875\de_santorini"				""
 				"workshop\1318698056\de_subzero"				""
@@ -128,6 +125,15 @@
 				"de_mirage"			""
 				"de_overpass"		""
 				"de_vertigo"		""
+			}
+		}
+
+		"mg_test"									// mapgroup definition
+		{
+			"name"			"mg_test"
+			"maps"
+			{
+				
 			}
 		}
 	}
