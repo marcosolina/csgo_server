@@ -45,7 +45,12 @@ The script will start to download CS:GO and it might take a while. It depends on
 ![Start Script](./Misc/Screenshots/2.png)
 ![Start Script](./Misc/Screenshots/3.png)
 
-One the process is completed you can stop the server by pressing "ctrl+c". Now you can start to edit the CS:GO configuration files accorting to your needs
+## Stop the server
+
+One the process is completed you can stop the server by pressing "ctrl+c"
+![Start Script](./Misc/Screenshots/4.png)
+
+Now you can start to edit the CS:GO configuration files accorting to your needs
 
 ## Configuration
 
