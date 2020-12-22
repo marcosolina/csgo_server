@@ -15,11 +15,15 @@ How to create a CS:GO Server on Ubuntu 18 x64
 
 To install the CS:GO server type the following commands in your terminal and follow the instructions on the screen.
 ~~~~
- $ sudo add-apt-repository multiverse
- $ sudo dpkg --add-architecture i386
- $ sudo apt update
- $ sudo apt install lib32gcc1 steamcmd 
- $ mkdir /path/to/csgoInstalDir
+# Remove possible Windows characters
+$ sed -i -e 's/\r$//' /path/to/the/installscript/installSteam.sh
+$ sed -i -e 's/\r$//' /path/to/the/installscript/startServer.sh
+
+# Make the script executable
+$ chmod +x /path/to/the/installscript/installSteam.sh
+
+# Instal Steam CMD
+$ /path/to/the/installscript/installSteam.sh
 ~~~~
 Once the installation is completed copy the "startServer.sh" script on you Ubuntu machine, open it in edit mode and set the value of the properties:
 ~~~~
