@@ -61,6 +61,7 @@ Files:
 * serverDir/subscribed_file_ids.txt -> Here I put the list of IDs of the workshop maps that I subscribed.
 * serverDir/csgo/autoexec.cfg -> I provided the Server config, like name, password.
 * serverDir/csgo/gamemode_competitive_server.cfg -> Here is where I override the Competitive mode configuration.
+* [List of CS:GO Cvars](https://developer.valvesoftware.com/wiki/List_of_CS:GO_Cvars)
 
 ## Connect to rcon
 
