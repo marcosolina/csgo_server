@@ -40,6 +40,23 @@ $ chmod +x /path/to/the/startServer.sh
 $ /path/to/the/startServer.sh
 ~~~~
 
+The script will start to download CS:GO and it might take a while. It depends on your internet connections.
+![Start Script](./Misc/Screenshots/1.png)
+![Start Script](./Misc/Screenshots/2.png)
+![Start Script](./Misc/Screenshots/3.png)
+
+One the process is completed you can stop the server by pressing "ctrl+c". Now you can start to edit the CS:GO configuration files accorting to your needs
+
+## Configuration
+
+There are multiple files that you can create or upadate to set your configuration. In my case I wanted to customise the game mode "Competitive" configuration.
+Files:
+* serverDir/GameModes_Server.txt -> Here is were I have defined my map groups.
+* serverDir/subscribed_collection_ids.txt -> Currently is empty, but here I can put the ID of a workshop collection that I subscribed.
+* serverDir/subscribed_file_ids.txt -> Here I put the list of IDs of the workshop maps that I subscribed.
+* serverDir/csgo/autoexec.cfg -> I provided the Server config, like name, password.
+* serverDir/csgo/gamemode_competitive_server.cfg -> Here is where I override the Competitive mode configuration.
+
 ## Connect to rcon
 
 From the CS console
