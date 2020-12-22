@@ -7,7 +7,7 @@ STEAM_CSGO_KEY=
 STEAM_API_KEY=
 CSGO_INSTALL_FOLDER_FOLDER=/path/to/csgoInstalDir
 MAP_GROUP=mg_ixi_workshop
-MAP_START=workshop/2311360577/de_mirage_cyberpunk
+MAP_START=de_dust2
 HOST_IP=192.168.1.21
 
 steamcmd +login anonymous +force_install_dir $CSGO_INSTALL_FOLDER_FOLDER +app_update 740 +quit
