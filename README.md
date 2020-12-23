@@ -67,7 +67,7 @@ $ csgo_server/Linux/startServer.sh
     ~~~~
 * Double click the startServer.bat to start the server
 
-## Configuration
+## CS:GO Configuration
 
 There are multiple files that you can create or upadate to set your configuration.
 
@@ -84,7 +84,7 @@ Visit [List of CS:GO Cvars](https://developer.valvesoftware.com/wiki/List_of_CS:
 * server.cfg
 * [profile].cfg (Example: marco.cfg, ixico.cfg)
 
-## RCON
+## CS:GO RCON
 
 ### Enable the "console" in CS:GO
 
