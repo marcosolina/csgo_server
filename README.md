@@ -9,7 +9,7 @@ How to create a CS:GO Dedicated Server
 * RAM:
     * Linux: 2GB+
     * Windows: 4GB+
-* HDD: 30GB+
+* HDD: 30GB+ (For the game only)
 * [Steam Game Server Login Token (GSLT)](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers)
 * [Steam Web API Key](https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators)
 
