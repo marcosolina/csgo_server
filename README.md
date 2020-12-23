@@ -1,6 +1,6 @@
-# CS:GO Server
+# CS:GO Dedicated Server
 
-How to create a CS:GO Server on Ubuntu 18 x64
+How to create a CS:GO Dedicated Server
 
 ## Requirements
 
