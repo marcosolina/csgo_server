@@ -4,7 +4,7 @@ How to create a CS:GO Server on Ubuntu 18 x64
 
 ## Requirements
 
-* OS: [Ubuntu Server 18.04](https://releases.ubuntu.com/18.04/ubuntu-18.04.5-live-server-amd64.iso)
+* OS: [Ubuntu Server 18.04](https://releases.ubuntu.com/18.04/ubuntu-18.04.5-live-server-amd64.iso) or Windows 7+
 * CPU: Intel Core Duo E6600 (2-2.8GHz+) or AMD Phenom X3 8750+
 * RAM: 2GB+
 * HDD: 30GB+
@@ -13,83 +13,109 @@ How to create a CS:GO Server on Ubuntu 18 x64
 
 ## Install CS:GO Dedicated Server
 
-To install the CS:GO server type the following commands in your terminal and follow the instructions on the screen.
-~~~~
-# Remove possible Windows characters
-$ sed -i -e 's/\r$//' /path/to/the/installscript/installSteam.sh
-$ sed -i -e 's/\r$//' /path/to/the/installscript/startServer.sh
+### Linux
 
-# Make the script executable
-$ chmod +x /path/to/the/installscript/installSteam.sh
+
+~~~~
+# Clone the repo
+$ git clone https://github.com/marcosolina/csgo_server.git
+
+# Remove possible Windows characters
+$ sed -i -e 's/\r$//' csgo_server/Linux/installSteam.sh
+$ sed -i -e 's/\r$//' csgo_server/Linux/startServer.sh
+
+# Make the scripts executable
+$ chmod +x csgo_server/Linux/installSteam.sh
+$ chmod +x csgo_server/Linux/startServer.sh
 
 # Instal Steam CMD
-$ /path/to/the/installscript/installSteam.sh
-~~~~
-Once the installation is completed copy the "startServer.sh" script on you Ubuntu machine, open it in edit mode and set the value of the properties:
-~~~~
+$ csgo_server/Linux/installSteam.sh
+
+# Edit the startServer.sh and set the properies below
+$ vim csgo_server/Linux/startServer.sh
+
 STEAM_CSGO_KEY=                 # Your Steam GSLT
 STEAM_API_KEY=                  # Your Steam Web API Key
-CSGO_INSTALL_FOLDER_FOLDER=     # /path/to/csgoInstalDir
-MAP_GROUP=                      # The map group name to use at start up
-MAP_START=                      # The map name to run at start up
-HOST_IP=                        # The IP of you machine
+CSGO_INSTALL_FOLDER_FOLDER=     # /full/path/to/csgo_server/csgoInstalDir
+MAP_GROUP=                      # The map group name to use at start up (Example: mg_active)
+MAP_START=                      # The map name to run at start up (Example: de_dust2)
+HOST_IP=                        # The IP of you machine (Example: 192.168.1.21)
+
+# Save the script
 ~~~~
 
-After editing the "startServer.sh" script, make it executable and run it.
+#### Start the server
 ~~~~
-# Make the script executable
-$ chmod +x /path/to/the/startServer.sh
-
-# Exucute the script
-$ /path/to/the/startServer.sh
+# Just run the "startServer.sh script"
+$ csgo_server/Linux/startServer.sh
 ~~~~
 
-The script will start to download CS:GO and it might take a while. It depends on your internet connections.
-![Start Script](./Misc/Screenshots/1.png)
-![Start Script](./Misc/Screenshots/2.png)
-![Start Script](./Misc/Screenshots/3.png)
+### Windows
 
-## Stop the server
-
-One the process is completed you can stop the server by pressing "ctrl+c"
-![Start Script](./Misc/Screenshots/4.png)
-
-Now you can start to edit the CS:GO configuration files accorting to your needs
+* [Download SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD)
+* [Download this Repo](https://github.com/marcosolina/csgo_server/archive/main.zip)
+* Extract the files
+* Edit the file csgo_server\Windows\startServer.bat and set the following properties
+    ~~~~
+    set STEAM_CSGO_KEY=                 # Your Steam GSLT
+    set STEAM_API_KEY=                  # Your Steam Web API Key
+    set CSGO_INSTALL_FOLDER_FOLDER=     # Full path to the csgInstalDir (Example: C:\path\to\csgoInstalDir )
+    set PATH_STEAM_CMD=                 # Full path to the SteamCMD exe file (Example: C:\path\to\steamcmd)
+    set MAP_GROUP=                      # The map group name to use at start up (Example: mg_active)
+    set MAP_START=                      # The map name to run at start up (Example: de_dust2)
+    set HOST_IP=                        # The IP of you machine (Example: 192.168.1.21)
+    ~~~~
+* Double click the startServer.bat to start the server
 
 ## Configuration
 
 There are multiple files that you can create or upadate to set your configuration. In my case I wanted to customise the game mode "Competitive" configuration.
-Files:
-* serverDir/GameModes_Server.txt -> Here is were I have defined my map groups.
-* serverDir/subscribed_collection_ids.txt -> Currently is empty, but here I can put the ID of a workshop collection that I subscribed.
-* serverDir/subscribed_file_ids.txt -> Here I put the list of IDs of the workshop maps that I subscribed.
-* serverDir/csgo/autoexec.cfg -> I provided the Server config, like name, password.
-* serverDir/csgo/gamemode_competitive_server.cfg -> Here is where I override the Competitive mode configuration.
-* [List of CS:GO Cvars](https://developer.valvesoftware.com/wiki/List_of_CS:GO_Cvars)
 
-## Connect to rcon
+| File | Usage|
+|---|---|
+| csgo_server/csgoInstalDir/csgo/cfg/server.cfg | In this file I added the minimal server configuration. Like the host name and the passwords for the server and "rcon" console |
+| csgo_server/csgoInstalDir/csgo/cfg/marco.cfg | In this file I provided the server configuration that I want to use in some cases. You can consider this as a "Server Profile Config" |
+| csgo_server/csgoInstalDir/csgo/cfg/ixico.cfg | In this file I provided the server configuration that I want to use in other cases. You can consider this as a "Server Profile 2" |
+| csgo_server/csgoInstalDir/csgo/GameModes_Server.txt | In this file I define "my custom map groups" |
+| csgo_server/csgoInstalDir/csgo/subscribed_collection_ids.txt | In this file I provide ID of the workshop collections that I want to subscribe to |
+| csgo_server/csgoInstalDir/csgo/subscribed_file_ids.txt | In this file I provide ID of the workshop maps that I want to subscribe to |
 
-From the CS console
+Visit [List of CS:GO Cvars](https://developer.valvesoftware.com/wiki/List_of_CS:GO_Cvars) for a full list of the "server properties" that you can use in:
+* server.cfg
+* [profile].cfg (Example: marco.cfg, ixico.cfg)
+
+## RCON
+
+### Enable the "console" in CS:GO
+
+Start CS:GO and set the following options:
+![Enable the console 1](./Misc/Screenshots/1.png)
+![Enable the console 2](./Misc/Screenshots/2.png)
+
+### Use the "RCON"
+
+While playing the game, press "\" to display the console and you start to send commands in this way:
 
 ~~~~
 $ rcon_password password_of_you_rcon
 $ rcon command_to_execute
 ~~~~
+![Console Usage](./Misc/Screenshots/3.png)
 
-## Some commands
+## Some RCON commands
 
-- rcon map workshop/2311360577/de_mirage_cyberpunk
-- rcon mapgroup [MAP_GROUP_NAME] # It changes the map group
-- rcon bot_kick # Kicks all the bots
-- rcon changelevel de_shortdust # It changes the level
-- rcon bot_add_t # Add Bot to Terrorist team
-- rcon bot_add_ct # Add Bot to Counter Terrorist team
-- rcon bot_stop 1 # Stops the bots, they will stand still and do nothing.
-- rcon bot_mimic 1 # Bots will mimic your movements and actions, bot_mimic 0 to turn off again.
+|Command|Description|
+|---|---|
+| rcon map workshop/2311360577/de_mirage_cyberpunk | It changes the map to workshop/2311360577/de_mirage_cyberpunk |
+| rcon changelevel de_shortdust | Another way to change the map |
+| rcon mapgroup [MAP_GROUP_NAME] | It changes the map group |
+| rcon bot_kick | Kicks all the bots|
+| rcon bot_add_t | Add Bot to Terrorist Team |
+| rcon bot_add_ct | Add Bot to Counter Terrorist Team |
+| rcon bot_stop 1 | Stops the bots, they will stand still and do nothing. |
+|rcon bot_mimic 1 | Bots will mimic your movements and actions, bot_mimic 0 to turn off again. |
 
-## Map Groups
-
-
+## My Map Groups
 
 * mg_ixi_workshop
     * [as_oilrig_b1](https://steamcommunity.com/sharedfiles/filedetails/?id=165683043)
@@ -156,9 +182,11 @@ $ rcon command_to_execute
     * de_vertigo
 
 
-## Workshop Map List
+## Misc
 
-Just copy the command into the rcon console to switch to one of the following maps:
+### RCON Copy & Paste
+
+The workshop maps have a very long name. So I created a list of rcon commands that I can easily copy and paste if needed:
 
 ~~~~
 rcon map workshop/165683043/as_oilrig_b1
