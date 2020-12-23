@@ -69,7 +69,7 @@ $ csgo_server/Linux/startServer.sh
 
 ## Configuration
 
-There are multiple files that you can create or upadate to set your configuration. In my case I wanted to customise the game mode "Competitive" configuration.
+There are multiple files that you can create or upadate to set your configuration.
 
 | File | Usage|
 |---|---|
