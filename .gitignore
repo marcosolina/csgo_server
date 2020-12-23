@@ -1,1 +1,11 @@
 /.project
+/csgoInstalDir/*
+!/csgoInstalDir/csgo/GamesModes_Server.txt
+!/csgoInstalDir/csgo/cfg/gamemode_competitive_server.cfg
+!/csgoInstalDir/csgo/cfg/server.cfg
+!/csgoInstalDir/csgo/cfg/ixico.cfg
+!/csgoInstalDir/csgo/cfg/marco.cfg
+!/csgoInstalDir/csgo/cfg/servermarco.cfg
+!/csgoInstalDir/csgo/cfg/autoexec.cfg
+!/csgoInstalDir/csgo/subscribed_collection_ids.txt
+!/csgoInstalDir/csgo/subscribed_file_ids.txt
