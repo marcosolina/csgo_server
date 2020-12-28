@@ -108,6 +108,8 @@ $ rcon command_to_execute
 
 |Command|Description|
 |---|---|
+| rcon exec marco | It loads my "server.cfg |
+| rcon exec ixico | It loads the "ixico.cfg |
 | rcon map workshop/2311360577/de_mirage_cyberpunk | It changes the map to workshop/2311360577/de_mirage_cyberpunk |
 | rcon changelevel de_shortdust | Another way to change the map |
 | rcon mapgroup [MAP_GROUP_NAME] | It changes the map group |
