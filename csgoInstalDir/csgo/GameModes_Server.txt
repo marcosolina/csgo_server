@@ -124,6 +124,9 @@
 				"de_mirage"			""
 				"de_overpass"		""
 				"de_vertigo"		""
+				"de_lake"			""
+				"de_safehouse"		""
+				"de_stmarc"			""
 			}
 		}
 	}
