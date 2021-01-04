@@ -10,10 +10,43 @@ MAP_GROUP=mg_ixi_workshop
 MAP_START=de_dust2
 HOST_IP=[YOUR SERVE IP]
 
+mapsGroup=(
+  "mg_ixi_workshop"
+  "mg_ixi_short"
+  "mg_ixi_workshop"
+)
+
+for i in ${!mapsGroup[@]}; do
+  echo "$i) ${mapsGroup[$i]}"
+done
+
+echo "Choose the start map group:"
+read startGroup
+
+echo "You choose: ${mapsGroup[$startGroup]}"
+MAP_GROUP=${mapsGroup[$startGroup]}
+
+
 maps=(
-"de_dust2"
 "cs_italy"
+"cs_assault"
+"cs_militia"
 "cs_office"
+"de_nuke"
+"de_train"
+"de_cbble"
+"de_dust2"
+"de_inferno"
+"de_lake"
+"de_mirage"
+"de_overpass"
+"de_vertigo"
+"de_lake"
+"de_safehouse"
+"de_stmarc"
+"de_shortnuke"
+"de_shortdust"
+"de_shorttrain"
 "workshop/165683043/as_oilrig_b1"
 "workshop/1820772401/as_tundra"
 "workshop/125786610/cs_backalley"
@@ -62,7 +95,7 @@ echo "Choose the start map:"
 read startMap
 
 echo "You choose: ${maps[$startMap]}"
-MAP_START = ${maps[$startMap]}
+MAP_START=${maps[$startMap]}
 
 steamcmd +login anonymous +force_install_dir $CSGO_INSTALL_FOLDER_FOLDER +app_update 740 +quit
 $CSGO_INSTALL_FOLDER_FOLDER/srcds_run -game csgo -console -usercon -port 27015 +ip $HOST_IP +game_type 0 +game_mode 1 +mapgroup $MAP_GROUP +map $MAP_START -authkey $STEAM_API_KEY +sv_setsteamaccount $STEAM_CSGO_KEY -net_port_try 1
