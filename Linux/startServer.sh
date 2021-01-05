@@ -32,6 +32,7 @@ maps=(
 "cs_assault"
 "cs_militia"
 "cs_office"
+"de_bank"
 "de_nuke"
 "de_train"
 "de_cbble"
