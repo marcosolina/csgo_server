@@ -3,12 +3,26 @@
 # for the STEAM_GSLT https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers
 # for the STEAM_WEB_API_KEY https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators
 
-STEAM_CSGO_KEY=[YOUR CSGO KEY]
-STEAM_API_KEY=[YOUR STEAM API KEY]
-CSGO_INSTALL_FOLDER_FOLDER=/path/to/csgoInstalDir
+
+read -p "Do you want to use env properties? (y/n): " useEnv
+
+if [ $useEnv = 'y' ]
+then
+  STEAM_CSGO_KEY=$ENV_STEAM_CSGO_KEY
+  STEAM_API_KEY=$ENV_STEAM_API_KEY
+  CSGO_INSTALL_FOLDER_FOLDER=$ENV_CSGO_INSTALL_FOLDER
+  HOST_IP=$ENV_HOST_IP
+else
+  STEAM_CSGO_KEY=[YOUR CSGO KEY]
+  STEAM_API_KEY=[YOUR STEAM API KEY]
+  CSGO_INSTALL_FOLDER_FOLDER=[/path/to/csgoInstalDir]
+  HOST_IP=[YOUR SERVE IP]
+fi
+
 MAP_GROUP=mg_ixi_workshop
 MAP_START=de_dust2
-HOST_IP=[YOUR SERVE IP]
+
+
 
 mapsGroup=(
   "mg_ixi_workshop"
@@ -20,8 +34,7 @@ for i in ${!mapsGroup[@]}; do
   echo "$i) ${mapsGroup[$i]}"
 done
 
-echo "Choose the start map group:"
-read startGroup
+read -p "Choose the start map group (type the number): " startGroup
 
 echo "You choose: ${mapsGroup[$startGroup]}"
 MAP_GROUP=${mapsGroup[$startGroup]}
@@ -32,8 +45,8 @@ maps=(
 "cs_assault"
 "cs_militia"
 "cs_office"
-"de_bank"
 "de_nuke"
+"de_bank"
 "de_train"
 "de_cbble"
 "de_dust2"
@@ -92,8 +105,7 @@ for i in ${!maps[@]}; do
   echo "$i) ${maps[$i]}"
 done
 
-echo "Choose the start map:"
-read startMap
+read -p "Choose the start map (type the number): "  startMap
 
 echo "You choose: ${maps[$startMap]}"
 MAP_START=${maps[$startMap]}
@@ -102,3 +114,15 @@ steamcmd +login anonymous +force_install_dir $CSGO_INSTALL_FOLDER_FOLDER +app_up
 $CSGO_INSTALL_FOLDER_FOLDER/srcds_run -game csgo -console -usercon -port 27015 +ip $HOST_IP +game_type 0 +game_mode 1 +mapgroup $MAP_GROUP +map $MAP_START -authkey $STEAM_API_KEY +sv_setsteamaccount $STEAM_CSGO_KEY -net_port_try 1
 
 
+if [ $useEnv = 'y' ]
+then
+  read -p "Do you want to store the demo files? (y/n):" demoFile
+  
+  if [ $demoFile = 'y' ]
+  then
+    scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
+  fi
+fi
+
+rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem
+rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/backup_round*.txt
