@@ -19,7 +19,7 @@ else
   HOST_IP=[YOUR SERVE IP]
 fi
 
-MAP_GROUP=mg_ixi_workshop
+MAP_GROUP=mg_classic_maps
 MAP_START=de_dust2
 
 
