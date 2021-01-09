@@ -14,9 +14,9 @@
 
 					"mapgroupsMP"						// List of mapgroups valid for this game mode ( competitive )
 					{
-						"mg_ixi_workshop"			""
-						"mg_ixi_short"				""
-						"mg_ixi_classic"			""
+						"mg_workshop_maps"			""
+						"mg_short_maps"				""
+						"mg_classic_maps"			""
 					}
 				}
 			}
@@ -44,9 +44,9 @@
 
 	"mapgroups"
 	{
-		"mg_ixi_workshop"									// mapgroup definition
+		"mg_workshop_maps"									// mapgroup definition
 		{
-			"name"			"mg_ixi_workshop"
+			"name"			"mg_workshop_maps"
 			"maps"
 			{
 				"workshop\165683043\as_oilrig_b1"				""
@@ -90,9 +90,9 @@
 			}
 		}
 		
-		"mg_ixi_short"									// mapgroup definition
+		"mg_short_maps"									// mapgroup definition
 		{
-			"name"			"mg_ixi_short"
+			"name"			"mg_short_maps"
 			"maps"
 			{
 				"de_shortnuke"									""
@@ -106,9 +106,9 @@
 			}
 		}
 		
-		"mg_ixi_classic"									// mapgroup definition
+		"mg_classic_maps"									// mapgroup definition
 		{
-			"name"			"mg_ixi_classic"
+			"name"			"mg_classic_maps"
 			"maps"
 			{
 				"cs_italy"			""
