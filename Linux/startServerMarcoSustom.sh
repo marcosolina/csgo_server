@@ -113,11 +113,16 @@ MAP_START=${maps[$startMap]}
 steamcmd +login anonymous +force_install_dir $CSGO_INSTALL_FOLDER_FOLDER +app_update 740 +quit
 $CSGO_INSTALL_FOLDER_FOLDER/srcds_run -game csgo -console -usercon -port 27015 +ip $HOST_IP +game_type 0 +game_mode 1 +mapgroup $MAP_GROUP +map $MAP_START -authkey $STEAM_API_KEY +sv_setsteamaccount $STEAM_CSGO_KEY -net_port_try 1
 
-read -p "Do you want to delete the recording of all the games? (y/n): " deleteRecordedGames
 
-if [ $deleteRecordedGames = 'y' ]
+if [ $useEnv = 'y' ]
 then
-  rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem
-  rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/backup_round*.txt
+  read -p "Do you want to store the demo files? (y/n):" demoFile
+  
+  if [ $demoFile = 'y' ]
+  then
+    scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
+  fi
 fi
 
+rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem
+rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/backup_round*.txt
