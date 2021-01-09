@@ -6,7 +6,7 @@ then
   sudo add-apt-repository multiverse
   sudo dpkg --add-architecture i386
   sudo apt update
-  sudo apt install lib32gcc1 steamcmd
+  sudo apt install -y lib32gcc1 steamcmd
 fi
 
 read -p "Do you want to set the Env Variables? (y/n): " setEnvProps
