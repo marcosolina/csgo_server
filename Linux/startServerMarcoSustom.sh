@@ -19,15 +19,15 @@ else
   HOST_IP=[YOUR SERVE IP]
 fi
 
-MAP_GROUP=mg_ixi_workshop
+MAP_GROUP=mg_workshop_maps
 MAP_START=de_dust2
 
 
 
 mapsGroup=(
-  "mg_ixi_workshop"
-  "mg_ixi_short"
-  "mg_ixi_classic"
+  "mg_workshop_maps"
+  "mg_short_maps"
+  "mg_classic_maps"
 )
 
 for i in ${!mapsGroup[@]}; do
