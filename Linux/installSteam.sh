@@ -15,7 +15,8 @@ if [ $setEnvProps = 'y' ]
 then
   read -p "Type here your STEAM CSGO KEY: "												STEAM_CSGO_KEY
   read -p "Type here your STEAM API KEY: "												STEAM_API_KEY
-  read -p "Type here the full path of the folder to user for the CSGO installation: "	CSGO_INSTALL_FOLDER
+  #read -p "Type here the full path of the folder to user for the CSGO installation: "	CSGO_INSTALL_FOLDER
+  CSGO_INSTALL_FOLDER=$(dirname $(dirname $(readlink -f "$0")))/csgoInstalDir
   read -p "Type the IP of this host: "													HOST_IP
   read -p "Type the user to use when copying the *.dem files: "							SSH_USER
   read -p "Type the IP of the machine where to copy the *.dem files: "					SSH_IP
