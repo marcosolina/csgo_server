@@ -4,28 +4,20 @@
 # for the STEAM_WEB_API_KEY https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators
 
 
-read -p "Do you want to use env properties? (y/n): " useEnv
+STEAM_CSGO_KEY=$ENV_STEAM_CSGO_KEY
+STEAM_API_KEY=$ENV_STEAM_API_KEY
+CSGO_INSTALL_FOLDER_FOLDER=$ENV_CSGO_INSTALL_FOLDER
+HOST_IP=$ENV_HOST_IP
 
-if [ $useEnv = 'y' ]
-then
-  STEAM_CSGO_KEY=$ENV_STEAM_CSGO_KEY
-  STEAM_API_KEY=$ENV_STEAM_API_KEY
-  CSGO_INSTALL_FOLDER_FOLDER=$ENV_CSGO_INSTALL_FOLDER
-  HOST_IP=$ENV_HOST_IP
-else
-  STEAM_CSGO_KEY=[YOUR CSGO KEY]
-  STEAM_API_KEY=[YOUR STEAM API KEY]
-  CSGO_INSTALL_FOLDER_FOLDER=[/path/to/csgoInstalDir]
-  HOST_IP=[YOUR SERVE IP]
-fi
-
-MAP_GROUP=mg_workshop_maps
+MAP_GROUP=mg_ixico_maps
 MAP_START=de_dust2
 
 
 
 mapsGroup=(
+  "mg_ixico_maps"
   "mg_workshop_maps"
+  "mg_all_maps"
   "mg_short_maps"
   "mg_classic_maps"
 )
@@ -41,26 +33,43 @@ MAP_GROUP=${mapsGroup[$startGroup]}
 
 
 maps=(
-"cs_italy"
+"ar_dizzy"
+"ar_lunacy"
+"ar_monastery"
+"ar_shoots"
+"cs_agency"
+"cs_apollo"
 "cs_assault"
+"cs_italy"
 "cs_militia"
 "cs_office"
-"de_nuke"
+"de_ancient"
+"de_anubis"
 "de_bank"
-"de_train"
+"de_cache"
+"de_canals"
 "de_cbble"
 "de_dust2"
+"de_elysion"
+"de_engage"
+"de_guard"
 "de_inferno"
 "de_lake"
 "de_mirage"
+"de_nuke"
 "de_overpass"
-"de_vertigo"
-"de_lake"
 "de_safehouse"
-"de_stmarc"
-"de_shortnuke"
 "de_shortdust"
-"de_shorttrain"
+"de_shortnuke"
+"de_stmarc"
+"de_sugarcane"
+"de_train"
+"de_vertigo"
+"dz_blacksite"
+"dz_frostbite"
+"dz_sirocco"
+"gd_cbble"
+"ar_baggage"
 "workshop/165683043/as_oilrig_b1"
 "workshop/1820772401/as_tundra"
 "workshop/125786610/cs_backalley"
