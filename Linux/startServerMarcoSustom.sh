@@ -120,14 +120,11 @@ steamcmd +login anonymous +force_install_dir $CSGO_INSTALL_FOLDER_FOLDER +app_up
 $CSGO_INSTALL_FOLDER_FOLDER/srcds_run -game csgo -console -usercon -port 27015 +ip $HOST_IP +game_type 0 +game_mode 1 +mapgroup $MAP_GROUP +map $MAP_START -authkey $STEAM_API_KEY +sv_setsteamaccount $STEAM_CSGO_KEY -net_port_try 1
 
 
-if [ $useEnv = 'y' ]
+read -p "Do you want to store the demo files? (y/n):" demoFile
+
+if [ $demoFile = 'y' ]
 then
-  read -p "Do you want to store the demo files? (y/n):" demoFile
-  
-  if [ $demoFile = 'y' ]
-  then
-    scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
-  fi
+  scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
 fi
 
 rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem
