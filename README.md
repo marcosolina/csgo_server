@@ -2,16 +2,31 @@
 
 How to create a CS:GO Dedicated Server
 
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Install CS:GO Dedicated Server](#install-csgo-dedicated-server)
+  - [Video Tutorial](#video-tutorial)
+  - [Linux](#linux)
+  - [Windows](#windows)
+- [CS:GO Configuration](#csgo-configuration)
+- [CS:GO RCON](#csgo-rcon)
+  - [Enable the "console" in CS:GO](#enable-the-console-in-csgo)
+  - [Use the "RCON"](#use-the-rcon)
+- [Some RCON commands](#some-rcon-commands)
+- [Misc](#misc)
+  - [RCON Copy & Paste](#rcon-copy--paste)
+
 ## Requirements
 
-* OS: [Ubuntu Server 18.04](https://releases.ubuntu.com/18.04/ubuntu-18.04.5-live-server-amd64.iso) or Windows 7+
-* CPU: Intel Core Duo E6600 (2-2.8GHz+) or AMD Phenom X3 8750+
-* RAM:
-  * Linux: 2GB+
-  * Windows: 4GB+
-* HDD: 30GB+ (For the game only)
-* [Steam Game Server Login Token (GSLT)](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers)
-* [Steam Web API Key](https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators)
+- OS: [Ubuntu Server 18.04](https://releases.ubuntu.com/18.04/ubuntu-18.04.5-live-server-amd64.iso) or Windows 7+
+- CPU: Intel Core Duo E6600 (2-2.8GHz+) or AMD Phenom X3 8750+
+- RAM:
+  - Linux: 2GB+
+  - Windows: 4GB+
+- HDD: 30GB+ (For the game only)
+- [Steam Game Server Login Token (GSLT)](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers)
+- [Steam Web API Key](https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators)
 
 ## Install CS:GO Dedicated Server
 
@@ -46,10 +61,10 @@ $ csgo_server/Linux/startServer.sh
 
 ### Windows
 
-* [Download SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD)
-* [Download this Repo](https://github.com/marcosolina/csgo_server/archive/main.zip)
-* Extract the files
-* Edit the file csgo_server\Windows\startServer.bat and set the following properties
+- [Download SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD#Downloading_SteamCMD)
+- [Download this Repo](https://github.com/marcosolina/csgo_server/archive/main.zip)
+- Extract the files
+- Edit the file csgo_server\Windows\startServer.bat and set the following properties
 
     ~~~~batch
     set STEAM_CSGO_KEY=                 # Your Steam GSLT
@@ -61,7 +76,7 @@ $ csgo_server/Linux/startServer.sh
     set HOST_IP=                        # The IP of you machine (Example: 192.168.1.21)
     ~~~~
 
-* Double click the startServer.bat to start the server
+- Double click the startServer.bat to start the server
 
 ## CS:GO Configuration
 
@@ -78,8 +93,8 @@ There are multiple files that you can create or upadate to set your configuratio
 
 Visit [List of CS:GO Cvars](https://developer.valvesoftware.com/wiki/List_of_CS:GO_Cvars) for a full list of the "server properties" that you can use in:
 
-* server.cfg
-* [profile].cfg (Example: marco.cfg, ixico.cfg)
+- server.cfg
+- [profile].cfg (Example: marco.cfg, ixico.cfg)
 
 ## CS:GO RCON
 
