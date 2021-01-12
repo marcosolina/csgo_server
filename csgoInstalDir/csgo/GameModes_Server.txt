@@ -265,6 +265,8 @@
 				"de_safehouse"						""
 				"de_stmarc"						""
 				"workshop\523638720\fy_simpsons"			""
+				"de_guard"						""
+				"cs_assault"						""
 			}
 		}
 		

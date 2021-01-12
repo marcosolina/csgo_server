@@ -15,6 +15,10 @@ How to create a CS:GO Dedicated Server
 
 ## Install CS:GO Dedicated Server
 
+### Video Tutorial
+
+[![Image](https://img.youtube.com/vi/FK1UkkfipIs/0.jpg)](https://www.youtube.com/watch?v=FK1UkkfipIs)
+
 ### Linux
 
 ~~~~bash
