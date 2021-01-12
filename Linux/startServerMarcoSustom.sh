@@ -124,6 +124,7 @@ read -p "Do you want to store the demo files? (y/n):" demoFile
 
 if [ $demoFile = 'y' ]
 then
+  ssh $ENV_SSH_USER@$ENV_SSH_IP rm -rf $ENV_SSH_FOLDER/*
   scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
 fi
 
