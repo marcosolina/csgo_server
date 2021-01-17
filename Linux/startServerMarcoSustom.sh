@@ -158,7 +158,11 @@ $CSGO_INSTALL_FOLDER_FOLDER/srcds_run -game csgo -console -usercon -port 27015 +
 
 if [ $DAY_OF_WEEK = $IXICO_DAY ]
 then
-  echo "Copying the files"
+  echo ""
+  echo "Copying the demo files"
+  echo ""
   ssh $ENV_SSH_USER@$ENV_SSH_IP rm -rf $ENV_SSH_FOLDER/*
   scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
 fi
+
+echo "End"
