@@ -3,6 +3,17 @@
 # for the STEAM_GSLT https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers
 # for the STEAM_WEB_API_KEY https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators
 
+echo ""
+echo ""
+echo "   ____ ____    ____  ___    ____           _ _           _           _   ____                           "
+echo "  / ___/ ___|_ / ___|/ _ \  |  _ \  ___  __| (_) ___ __ _| |_ ___  __| | / ___|  ___ _ ____   _____ _ __ "
+echo " | |   \___ (_) |  _| | | | | | | |/ _ \/ _' | |/ __/ _' | __/ _ \/ _' | \___ \ / _ \ '__\ \ / / _ \ '__|"
+echo " | |___ ___) || |_| | |_| | | |_| |  __/ (_| | | (_| (_| | ||  __/ (_| |  ___) |  __/ |   \ V /  __/ |   "
+echo "  \____|____(_)\____|\___/  |____/ \___|\__,_|_|\___\__,_|\__\___|\__,_| |____/ \___|_|    \_/ \___|_|   "
+echo ""
+echo ""
+echo ""   
+
 
 read -p "Do you want to use env properties? (y/n): " useEnv
 
