@@ -1,10 +1,10 @@
 set STEAM_CSGO_KEY=[YOUR_STEAM_KEY]
 set STEAM_API_KEY=[YOUR_STEAM_API_KEY]
-set CSGO_INSTALL_FOLDER_FOLDER=c:\path\to\csgoInstalDir
-set PATH_STEAM_CMD=C:\path\to\steamcmd
+set CSGO_INSTALL_FOLDER_FOLDER=C:\path\to\csgoInstalDir
+set PATH_STEAM_CMD=C:\path\to\steamcmd.exe
 set MAP_GROUP=mg_classic_maps
 set MAP_START=de_dust2
-set HOST_IP=192.168.1.21
+set HOST_IP=[THE_IP_OF_YOUR_MACHINE]
 
 
 %PATH_STEAM_CMD% +login anonymous +force_install_dir %CSGO_INSTALL_FOLDER_FOLDER% +app_update 740 +quit
