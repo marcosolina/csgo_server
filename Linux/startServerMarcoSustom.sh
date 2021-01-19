@@ -161,8 +161,12 @@ then
   echo ""
   echo "Copying the demo files"
   echo ""
-  ssh $ENV_SSH_USER@$ENV_SSH_IP rm -rf $ENV_SSH_FOLDER/*
-  scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$ENV_SSH_FOLDER
+  DATE=$(date +'%Y-%m-%d')
+  FOLDER=$ENV_SSH_FOLDER/$DATE
+
+  ssh $ENV_SSH_USER@$ENV_SSH_IP mkdir -p $FOLDER
+  #ssh $ENV_SSH_USER@$ENV_SSH_IP rm -rf $ENV_SSH_FOLDER/*
+  scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$FOLDER
 fi
 
 echo "End"
