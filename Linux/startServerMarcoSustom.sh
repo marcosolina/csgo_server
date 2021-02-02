@@ -9,8 +9,8 @@ STEAM_API_KEY=$ENV_STEAM_API_KEY
 CSGO_INSTALL_FOLDER_FOLDER=$ENV_CSGO_INSTALL_FOLDER
 HOST_IP=$ENV_HOST_IP
 
-MAP_GROUP=mg_ixico_maps
-MAP_START=de_dust2
+MAP_GROUP=$1
+MAP_START=$2
 
 rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem
 rm -rf $CSGO_INSTALL_FOLDER_FOLDER/csgo/backup_round*.txt
@@ -59,7 +59,12 @@ for i in ${!mapsGroup[@]}; do
   echo "$i) ${mapsGroup[$i]}"
 done
 
-read -p "Choose the start map group (type the number): " startGroup
+
+if [ -n "$1" ]; then
+  echo "Start group provided as intput parameter"
+else
+  read -p "Choose the start map group (type the number): " startGroup
+fi
 
 echo ""
 echo "You choose: ${mapsGroup[$startGroup]}"
@@ -146,7 +151,13 @@ for i in ${!maps[@]}; do
   echo "$i) ${maps[$i]}"
 done
 
-read -p "Choose the start map (type the number): "  startMap
+
+if [ -n "$2" ]; then
+  echo "Start map specified as input param"
+else
+  read -p "Choose the start map (type the number): "  startMap
+fi
+
 
 echo ""
 echo "You choose: ${maps[$startMap]}"
