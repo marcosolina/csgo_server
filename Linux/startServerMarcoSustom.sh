@@ -145,6 +145,7 @@ maps=(
 "workshop/1855652898/de_zenith"
 "workshop/389175812/de_zoo"
 "workshop/523638720/fy_simpsons"
+"workshop/832164297/de_prodigy_classic"
 )
 
 for i in ${!maps[@]}; do
