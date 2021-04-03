@@ -175,13 +175,11 @@ then
   echo ""
   DATE=$(date +'%Y-%m-%d')
   FOLDER_DEM="$ENV_SSH_FOLDER/demfiles/$DATE"
-  FOLDER_ROUNDS="$ENV_SSH_FOLDER/rounds/$DATE"
 
   ssh $ENV_SSH_USER@$ENV_SSH_IP mkdir -p $FOLDER_DEM
-  ssh $ENV_SSH_USER@$ENV_SSH_IP mkdir -p $FOLDER_ROUNDS
   #ssh $ENV_SSH_USER@$ENV_SSH_IP rm -rf $ENV_SSH_FOLDER/*
   scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$FOLDER_DEM
-  scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/backup_round*.txt $ENV_SSH_USER@$ENV_SSH_IP:$FOLDER_ROUNDS
+  curl --location --request POST 'https://marco.selfip.net/demparser/newdata'
 fi
 
 echo "End"
