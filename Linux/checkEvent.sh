@@ -17,7 +17,7 @@ do
 	else
 		OLD_VALUE=$NEW_VALUE
 		if [ "$NEW_VALUE" = "End Map" ]; then
-                     sleep 30
+                     sleep 40
 		     echo "Copying dem files"
 		     ssh $ENV_SSH_USER@$ENV_SSH_IP mkdir -p $FOLDER_DEM
                      scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$FOLDER_DEM
