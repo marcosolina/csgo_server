@@ -3,18 +3,15 @@
 OLD_VALUE="NO"
 
 CSGO_INSTALL_FOLDER_FOLDER=$ENV_CSGO_INSTALL_FOLDER
-EVENT_FILE=$CSGO_INSTALL_FOLDER/csgo/addons/sourcemod/event.txt
+EVENT_FILE=$ENV_CSGO_INSTALL_FOLDER/csgo/addons/sourcemod/event.txt
 
-echo ""
-echo "Copying the demo files"
-echo ""
 DATE=$(date +'%Y-%m-%d')
 FOLDER_DEM="$ENV_SSH_FOLDER/demfiles/$DATE"
 
 
 while :
 do
-	NEW_VALUE=$(tr -d '\n' < $FILE_PATH)
+	NEW_VALUE=$(tr -d '\n' < $EVENT_FILE)
 	if [ "$OLD_VALUE" = "$NEW_VALUE" ]; then
 		echo "equal"
 	else
