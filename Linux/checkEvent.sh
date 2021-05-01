@@ -16,6 +16,7 @@ do
         NEW_VALUE=$(tr -d '\n' < $EVENT_FILE)
         if [ "$OLD_VALUE" = "$NEW_VALUE" ]; then
                 # echo "equal"
+                DUMMY=ciao
         else
                 OLD_VALUE="NO"
                 echo "sending event $NEW_VALUE"
