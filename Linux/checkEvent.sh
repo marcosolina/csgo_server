@@ -28,7 +28,7 @@ do
                         FOLDER_DEM="$ENV_SSH_FOLDER/demfiles/$DATE"
                         ssh $ENV_SSH_USER@$ENV_SSH_IP mkdir -p $FOLDER_DEM
                         scp $CSGO_INSTALL_FOLDER_FOLDER/csgo/*.dem $ENV_SSH_USER@$ENV_SSH_IP:$FOLDER_DEM
-                        curl --location --request POST 'http://$ENV_SSH_IP:8080/demparser/newdata' --header 'Content-Type: application/json' --data-raw '{"forceDeleteBadFiles": true}'
+                        curl --location --request POST "http://$ENV_SSH_IP:8080/demparser/newdata" --header 'Content-Type: application/json' --data-raw '{"forceDeleteBadFiles": true}'
                 fi
         fi
 
