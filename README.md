@@ -4,18 +4,18 @@ How to create a CS:GO Dedicated Server
 
 ## Table of Contents
 
-- [Requirements](#requirements)
-- [Install CS:GO Dedicated Server](#install-csgo-dedicated-server)
-  - [Video Tutorial](#video-tutorial)
-  - [Linux](#linux)
-  - [Windows](#windows)
-- [CS:GO Configuration](#csgo-configuration)
-- [CS:GO RCON](#csgo-rcon)
-  - [Enable the "console" in CS:GO](#enable-the-console-in-csgo)
-  - [Use the "RCON"](#use-the-rcon)
-- [Some RCON commands](#some-rcon-commands)
-- [Misc](#misc)
-  - [RCON Copy & Paste](#rcon-copy--paste)
+- [CS:GO Dedicated Server](#csgo-dedicated-server)
+  - [Table of Contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [Install CS:GO Dedicated Server](#install-csgo-dedicated-server)
+    - [Linux](#linux)
+    - [Windows](#windows)
+    - [Video Tutorial](#video-tutorial)
+  - [CS:GO Configuration](#csgo-configuration)
+  - [CS:GO RCON](#csgo-rcon)
+    - [Enable the "console" in CS:GO](#enable-the-console-in-csgo)
+    - [Use the "RCON"](#use-the-rcon)
+  - [Some RCON commands](#some-rcon-commands)
 
 ## Requirements
 
@@ -24,39 +24,16 @@ How to create a CS:GO Dedicated Server
 - RAM:
   - Linux: 2GB+
   - Windows: 4GB+
-- HDD: 30GB+ (For the game only)
+- HDD: 35GB+
 - [Steam Game Server Login Token (GSLT)](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Dedicated_Servers)
 - [Steam Web API Key](https://developer.valvesoftware.com/wiki/CSGO_Workshop_For_Server_Operators)
 
 ## Install CS:GO Dedicated Server
 
-### Video Tutorial
-
-[![Image](https://img.youtube.com/vi/FK1UkkfipIs/0.jpg)](https://www.youtube.com/watch?v=FK1UkkfipIs)
-
 ### Linux
 
 ~~~~bash
-# Clone the repo
-$ git clone https://github.com/marcosolina/csgo_server.git
-
-# Remove possible Windows characters
-$ sed -i -e 's/\r$//' csgo_server/Linux/installSteam.sh
-$ sed -i -e 's/\r$//' csgo_server/Linux/startServer.sh
-
-# Make the scripts executable
-$ chmod +x csgo_server/Linux/installSteam.sh
-$ chmod +x csgo_server/Linux/startServer.sh
-
-# Instal Steam CMD
-$ csgo_server/Linux/installSteam.sh
-~~~~
-
-#### Start the server
-
-~~~~bash
-# Just run the "startServer.sh script"
-$ csgo_server/Linux/startServer.sh
+bash <(curl -L https://raw.githubusercontent.com/marcosolina/csgo_server/main/Linux/setup.sh)
 ~~~~
 
 ### Windows
@@ -78,6 +55,10 @@ $ csgo_server/Linux/startServer.sh
 
 - Double click the startServer.bat to start the server
 
+### Video Tutorial
+
+[![Image](https://img.youtube.com/vi/FK1UkkfipIs/0.jpg)](https://www.youtube.com/watch?v=FK1UkkfipIs)
+
 ## CS:GO Configuration
 
 There are multiple files that you can create or upadate to set your configuration.
@@ -85,8 +66,6 @@ There are multiple files that you can create or upadate to set your configuratio
 | File | Usage|
 |---|---|
 | csgo_server/csgoInstalDir/csgo/cfg/server.cfg | In this file I added the minimal server configuration. Like the host name and the passwords for the server and "rcon" console |
-| csgo_server/csgoInstalDir/csgo/cfg/marco.cfg | In this file I provided the server configuration that I want to use in some cases. You can consider this as a "Server Profile Config" |
-| csgo_server/csgoInstalDir/csgo/cfg/ixico.cfg | In this file I provided the server configuration that I want to use in other cases. You can consider this as a "Server Profile 2" |
 | csgo_server/csgoInstalDir/csgo/GameModes_Server.txt | In this file I define "my custom map groups" |
 | csgo_server/csgoInstalDir/csgo/subscribed_collection_ids.txt | In this file I provide ID of the workshop collections that I want to subscribe to |
 | csgo_server/csgoInstalDir/csgo/subscribed_file_ids.txt | In this file I provide ID of the workshop maps that I want to subscribe to |
@@ -94,7 +73,6 @@ There are multiple files that you can create or upadate to set your configuratio
 Visit [List of CS:GO Cvars](https://developer.valvesoftware.com/wiki/List_of_CS:GO_Cvars) for a full list of the "server properties" that you can use in:
 
 - server.cfg
-- [profile].cfg (Example: marco.cfg, ixico.cfg)
 
 ## CS:GO RCON
 
@@ -130,49 +108,3 @@ rcon command_to_execute
 | rcon bot_stop 1 | Stops the bots, they will stand still and do nothing. |
 |rcon bot_mimic 1 | Bots will mimic your movements and actions, bot_mimic 0 to turn off again. |
 
-## Misc
-
-### RCON Copy & Paste
-
-The workshop maps have a very long name. So I created a list of rcon commands that I can easily copy and paste if needed:
-
-~~~~bash
-rcon map workshop/165683043/as_oilrig_b1
-rcon map workshop/1820772401/as_tundra
-rcon map workshop/125786610/cs_backalley
-rcon map workshop/129042069/cs_bank
-rcon map workshop/600914785/cs_cruise
-rcon map workshop/135827566/cs_estate
-rcon map workshop/273415773/cs_hijack
-rcon map workshop/127012360/cs_museum
-rcon map workshop/206678373/cs_valley
-rcon map workshop/600728667/de_aqueduct
-rcon map workshop/320674385/de_arcade_v2
-rcon map workshop/1561348377/de_aztec
-rcon map workshop/1302060184/de_beerhouse
-rcon map workshop/529733812/de_blast_beta02
-rcon map workshop/2011784264/de_blossom
-rcon map workshop/1258599704/de_breach
-rcon map workshop/874801875/de_Codewise2
-rcon map workshop/215971897/de_coldwater
-rcon map workshop/1414531578/de_cornerwork
-rcon map workshop/239672577/de_crown
-rcon map workshop/1387732091/de_dst
-rcon map workshop/2175304484/de_engage
-rcon map workshop/401145257/de_fire
-rcon map workshop/2105680462/de_firenze
-rcon map workshop/599577239/de_garrison
-rcon map workshop/570181108/de_inferno_winter
-rcon map workshop/1958745897/de_marine
-rcon map workshop/221603249/de_marquis
-rcon map workshop/2064064363/de_miracle
-rcon map workshop/2311360577/de_mirage_cyberpunk
-rcon map workshop/1978052734/de_mutiny
-rcon map workshop/1587622126/de_pyramid
-rcon map workshop/546623875/de_santorini
-rcon map workshop/1318698056/de_subzero
-rcon map workshop/862889198/de_westwood2
-rcon map workshop/1855652898/de_zenith
-rcon map workshop/389175812/de_zoo
-rcon map workshop/523638720/fy_simpsons
-~~~~

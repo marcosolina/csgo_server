@@ -25,8 +25,15 @@ then
   echo "export ENV_CSGO_INSTALL_FOLDER=$CSGO_INSTALL_FOLDER"  | sudo tee -a /etc/profile
   echo "export ENV_HOST_IP=$HOST_IP"                          | sudo tee -a /etc/profile
   
-  echo "Restarting the machine..."
-  sleep 5
-  sudo reboot now
 fi
 
+CSGO_SCRIPTS_FOLDER=$(dirname $(dirname $(readlink -f "$0")))/Linux
+echo ""
+echo ""
+echo "To start the server run: $CSGO_SCRIPTS_FOLDER/startServer.sh"
+
+read -p "Press enter to continue" okappa
+
+echo "Restarting the machine..."
+sleep 5
+sudo reboot now
