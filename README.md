@@ -19,3 +19,9 @@ How to create a CS2 Dedicated Server
 ```bash
 bash <(curl -L https://raw.githubusercontent.com/marcosolina/csgo_server/main/Linux/setup.sh)
 ```
+
+#### Start the server
+
+```bash
+bash <(curl -L https://raw.githubusercontent.com/marcosolina/csgo_server/main/Linux/startServer.sh)
+```
