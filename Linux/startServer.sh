@@ -7,7 +7,7 @@ CS2_DIR="${HOMEDIR}/cs2"
 STEAMCMDDIR="${HOMEDIR}/steamcmd"
 
 ${STEAMCMDDIR}/steamcmd.sh +force_install_dir "${CS2_DIR}" \
-                                +login \
+                                +login gnari \
                                 +app_update "${STEAMAPPID}" \
                                 +quit
 
