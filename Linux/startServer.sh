@@ -6,8 +6,10 @@ HOMEDIR="/home/${LOGGED_USER}"
 CS2_DIR="${HOMEDIR}/cs2"
 STEAMCMDDIR="${HOMEDIR}/steamcmd"
 
+read -p "Type your Steam username: " STEAM_USERNAME
+
 ${STEAMCMDDIR}/steamcmd.sh +force_install_dir "${CS2_DIR}" \
-                                +login "gnari" \
+                                +login "${STEAM_USERNAME}" \
                                 +app_update "${STEAMAPPID}" \
                                 +quit
 
