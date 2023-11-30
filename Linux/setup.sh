@@ -1,26 +1,33 @@
 #!/bin/bash
 
-echo ""
-echo ""
-read -p "Where do you want to install the server? (/full/path/): " INSTALL_PATH
-cd $INSTALL_PATH
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
 
-git clone https://github.com/marcosolina/csgo_server.git
+apt update
+
+LOGGED_USER=$(logname)
 
 
-SCRIPTS_FOLDER=$INSTALL_PATH/csgo_server/Linux
-CFG_FOLDER=$INSTALL_PATH/csgo_server/csgoInstalDir/csgo/cfg
+STEAMAPPID=730
+HOMEDIR="/home/${LOGGED_USER}"
+CS2_DIR="${HOMEDIR}/cs2"
+STEAMCMDDIR="${HOMEDIR}/steamcmd"
 
-sed -i -e 's/\r$//' $SCRIPTS_FOLDER/*
-chmod +x $SCRIPTS_FOLDER/*
+apt install -y curl git tmux screen lib32gcc-s1 jq lib32stdc++6
 
-read -p "How do you want to call your server: " SERVER_NAME
-read -p "Choose your RCON password: " RCON_PASSWORD
-read -p "Choose your SERVER  password: " SERVER_PASSWORD
-
-sed -i -e "s/SERVER_NAME/$SERVER_NAME/g" $CFG_FOLDER/server.cfg
-sed -i -e "s/RCON_PASSWORD/$RCON_PASSWORD/g" $CFG_FOLDER/server.cfg
-sed -i -e "s/SERVER_PASSWORD/$SERVER_PASSWORD/g" $CFG_FOLDER/server.cfg
-
-echo "Installing Steam CMD"
-$SCRIPTS_FOLDER/installSteam.sh
+su "${LOGGED_USER}" -c \
+		"mkdir -p \"${STEAMCMDDIR}\" \
+				&& mkdir -p \"${CS2_DIR}\" \
+                && curl -fsSL 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz' | tar xvzf - -C \"${STEAMCMDDIR}\" \
+                && \"${STEAMCMDDIR}/steamcmd.sh\" +quit \
+                && ln -s \"${STEAMCMDDIR}/linux32/steamclient.so\" \"${STEAMCMDDIR}/steamservice.so\" \
+                && mkdir -p \"${HOMEDIR}/.steam/sdk32\" \
+                && ln -s \"${STEAMCMDDIR}/linux32/steamclient.so\" \"${HOMEDIR}/.steam/sdk32/steamclient.so\" \
+                && ln -s \"${STEAMCMDDIR}/linux32/steamcmd\" \"${STEAMCMDDIR}/linux32/steam\" \
+                && mkdir -p \"${HOMEDIR}/.steam/sdk64\" \
+                && ln -s \"${STEAMCMDDIR}/linux64/steamclient.so\" \"${HOMEDIR}/.steam/sdk64/steamclient.so\" \
+                && ln -s \"${STEAMCMDDIR}/linux64/steamcmd\" \"${STEAMCMDDIR}/linux64/steam\" \
+                && ln -s \"${STEAMCMDDIR}/steamcmd.sh\" \"${STEAMCMDDIR}/steam.sh\"" \
+ 	&& ln -s "${STEAMCMDDIR}/linux64/steamclient.so" "/usr/lib/x86_64-linux-gnu/steamclient.so" \
