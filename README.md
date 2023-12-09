@@ -25,3 +25,8 @@ bash <(curl -L https://raw.githubusercontent.com/marcosolina/csgo_server/main/Li
 ```bash
 bash <(curl -L https://raw.githubusercontent.com/marcosolina/csgo_server/main/Linux/startServer.sh)
 ```
+
+## Some Links
+
+- [Game mode](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive/Game_Modes)
+- [List of Counter-Strike 2 console commands and variables](https://developer.valvesoftware.com/wiki/List_of_Counter-Strike_2_console_commands_and_variables)
